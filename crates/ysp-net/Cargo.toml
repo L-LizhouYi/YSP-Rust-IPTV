@@ -1,0 +1,18 @@
+[package]
+name = "ysp-net"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "央视频上游接口：HTTP / token / 签名 / player / 目录 / 节目单"
+
+[dependencies]
+ysp-core = { path = "../ysp-core" }
+bytes.workspace = true
+chrono.workspace = true
+lru.workspace = true
+reqwest.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tracing.workspace = true

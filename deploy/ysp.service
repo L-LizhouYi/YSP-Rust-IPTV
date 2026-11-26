@@ -1,0 +1,23 @@
+[Unit]
+Description=ysp-platform (央视频直播平台)
+Documentation=https://github.com/
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ysp-rs
+Environment=RUST_LOG=info
+Environment=YSP_CACHE=/var/lib/ysp
+Environment=YSP_SEGMENT_MEM_MB=256
+Environment=YSP_CHANNEL_MEM_MB=32
+ExecStart=/usr/local/bin/ysp-server serve --host 0.0.0.0 --port 8525 --warm
+Restart=always
+RestartSec=3
+LimitNOFILE=65535
+# 2G 小机器：给进程一个上限，避免极端情况下把系统拖死。
+MemoryHigh=600M
+MemoryMax=1000M
+
+[Install]
+WantedBy=multi-user.target
