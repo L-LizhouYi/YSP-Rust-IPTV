@@ -1,6 +1,6 @@
 [Unit]
 Description=ysp-platform (央视频直播平台)
-Documentation=https://github.com/
+Documentation=https://github.com/L-LizhouYi/YSP-Rust-IPTV
 After=network-online.target
 Wants=network-online.target
 
